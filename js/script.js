@@ -4,28 +4,30 @@
 
 const quotes = [
   {
-    quote: `I don't stop when I'm done. I stop when I'm tired.`, 
-    by: 'David Goggins'
+    quote: `I don't stop when I'm tired. I stop when I'm done.`, 
+    source: 'David Goggins'
   },
   {
     quote: `The fears we don't face become our limits`, 
-    by: 'Robin Sharma'
+    source: 'Robin Sharma',
+    year: '5/7/2016'
   },
   {
     quote: `If people are doubting how far you can go, go so far you can't hear them anymore`, 
-    by: 'Michele Ruiz'
+    source: 'Michele Ruiz'
   },
   {
     quote: `Make your life a masterpiece; imagine no limitations on what you can be, have or do.`, 
-    by: 'Brian Tracy'
+    source: 'Brian Tracy'
   },
   {
     quote: `If you're offered a seat on a rocket ship, don't ask what seat! Just get on.`, 
-    by: 'Sheryl Sandberg'
+    source: 'Sheryl Sandberg'
   },
   {
     quote: `That's the beauty of argument, if you argue correctly, you're never wrong.`, 
-    by: 'Christopher Buckley' 
+    source: 'Nick Naylor',
+    citation: 'Thank You For Smoking'
   }
 ];
 
@@ -36,7 +38,7 @@ const quotes = [
 
 function getRandomQuote() {
 let randomNumber = Math.floor(Math.random()*quotes.length);
-let randomQuote = quotes[randomNumber].quote;
+let randomQuote = quotes[randomNumber];
 return randomQuote;
 }
 
@@ -47,10 +49,17 @@ return randomQuote;
 
 function printQuote() {
 let html = '';
-html += `<p>${getRandomQuote()}</p>`;
+
+let theQuote = getRandomQuote();
+
+html += `<p class="quote">${theQuote.quote}</p> 
+<p class="source">${theQuote.source}</p>`;
+
+document.getElementById("quote-box").innerHTML = html;
 return html;
 }
-let html = printQuote() ;
+
+
 
 
 /***
