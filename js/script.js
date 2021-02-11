@@ -55,7 +55,7 @@ if (theQuote.year) {
 }
 
 if (theQuote.citation) {
-  html += `<span class="year">"${theQuote.citation}"</span></p>`;
+  html += `<span class="citation">${theQuote.citation}</span></p>`;
 }
 
 document.getElementById("quote-box").innerHTML = html;
