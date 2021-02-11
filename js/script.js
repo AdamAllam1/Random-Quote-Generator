@@ -1,6 +1,6 @@
-/*** 
- * `quotes` array 
-***/
+
+
+/** Array of objects containing 6 different quotes and information about those quotes */
 
 const quotes = [
   {
@@ -33,9 +33,7 @@ const quotes = [
 ];
 
 
-/***
- * `getRandomQuote` function
-***/
+/** Function that supplies one of the objects from the "quotes" array */
 
 function getRandomQuote() {
 let randomNumber = Math.floor(Math.random()*quotes.length);
@@ -44,9 +42,8 @@ return randomQuote;
 }
 
 
-/***
- * `printQuote` function
-***/
+
+/** Function that calls the "getRandomQuote()" function and prints a random quote to the page */
 
 function printQuote() {
 let theQuote = getRandomQuote();
@@ -76,32 +73,6 @@ return html;
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/***
- * click event listener for the print quote button
- * DO NOT CHANGE THE CODE BELOW!!
-***/
+/** Code that has been forbidden to touch */
 
 document.getElementById('load-quote').addEventListener("click", printQuote, false);
