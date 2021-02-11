@@ -14,7 +14,8 @@ const quotes = [
   },
   {
     quote: `If people are doubting how far you can go, go so far you can't hear them anymore`, 
-    source: 'Michele Ruiz'
+    source: 'Michele Ruiz',
+    citation: 'Facebook'
   },
   {
     quote: `Make your life a masterpiece; imagine no limitations on what you can be, have or do.`, 
@@ -48,16 +49,52 @@ return randomQuote;
 ***/
 
 function printQuote() {
-let html = '';
-
 let theQuote = getRandomQuote();
+let html = `<p class="quote">${theQuote.quote}</p> 
+<p class="source">${theQuote.source}`;
 
-html += `<p class="quote">${theQuote.quote}</p> 
-<p class="source">${theQuote.source}</p>`;
+if (theQuote.year) {
+  html += `<span class="year">${theQuote.year}</span></p>`;
+}
+
+if (theQuote.citation) {
+  html += `<span class="year">"${theQuote.citation}"</span></p>`;
+}
 
 document.getElementById("quote-box").innerHTML = html;
 return html;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
